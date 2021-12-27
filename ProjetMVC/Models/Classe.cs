@@ -68,6 +68,7 @@ namespace ProjetMVC.Models
             var weapons = modelBuilder.Entity<Weapon>();
             weapons.HasKey(b => b.WeaponID);
             weapons.Property(b => b.WeaponModel).IsRequired();
+            weapons.HasOptional(b => b.Ammo).WithMany(a => a.Weapons).HasForeignKey("ID_Ammo");
 
             var users = modelBuilder.Entity<User>();
             users.HasKey(b => b.UserID);

@@ -1,0 +1,2 @@
+C:\Users\paran\Desktop\IS3\programmation client-serveur\ProjetMVC\ProjetMVC\obj\Debug\ProjetMVC.csproj.AssemblyReference.cache
+C:\Users\paran\Desktop\IS3\programmation client-serveur\ProjetMVC\ProjetMVC\obj\Debug\ProjetMVC.csproj.CoreCompileInputs.cache
