@@ -34,7 +34,7 @@ namespace ProjetMVC.Models
     {
         public int WeaponID { get; set; }
         public string WeaponModel { get; set; }
-        public string AmmoID { get; set; }
+        //public string AmmoID { get; set; }
 
         public virtual Ammo Ammo { get; set; }
         public virtual ICollection<Certificat> Certificats { get; set; }
@@ -61,5 +61,31 @@ namespace ProjetMVC.Models
         /*
         public DbSet<Product> Products { get; set; }
         public DbSet<Category> Categories { get; set;} */
+
+
+        protected override void OnModelCreating(DbModelBuilder modelBuilder)
+        {
+            var weapons = modelBuilder.Entity<Weapon>();
+            weapons.HasKey(b => b.WeaponID);
+            weapons.Property(b => b.WeaponModel).IsRequired();
+
+            var users = modelBuilder.Entity<User>();
+            users.HasKey(b => b.UserID);
+            users.Property(b => b.Name).IsRequired();
+            users.Property(b => b.LastName).IsRequired();
+            users.Property(b => b.Birthday).IsRequired();
+            users.Property(b => b.Address).IsRequired();
+
+            var certificats = modelBuilder.Entity<Certificat>();
+            certificats.HasKey(b => b.CertificatID);
+            certificats.Property(b => b.DateBegin).IsRequired();
+            certificats.Property(b => b.DateEnd).IsRequired();
+
+
+            var ammos = modelBuilder.Entity<Ammo>();
+            ammos.HasKey(b => b.AmmoID);
+            ammos.Property(b => b.Caliber).IsRequired();
+            ammos.Property(b => b.Type).IsRequired();
+        }
     }
 }
