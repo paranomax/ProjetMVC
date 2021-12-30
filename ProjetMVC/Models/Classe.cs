@@ -51,8 +51,9 @@ namespace ProjetMVC.Models
 
 
     }
-    public class Model : DbContext
+    public class StoreContext : DbContext
     {   
+
         public virtual DbSet<User> User { get; set; }
         public virtual DbSet<Certificat> Certificat { get; set; }
         public virtual DbSet<Weapon> Weapon { get; set; }
@@ -68,8 +69,7 @@ namespace ProjetMVC.Models
             var weapons = modelBuilder.Entity<Weapon>();
             weapons.HasKey(b => b.WeaponID);
             weapons.Property(b => b.WeaponModel).IsRequired();
-            weapons.HasMany(b => b.Certificats).WithRequired(a => a.Weapon).HasForeignKey(e => e.CertificatID);
-            
+            weapons.HasMany(b => b.Certificats).WithRequired(a => a.Weapon).HasForeignKey(e => e.CertificatID);      
 
             var users = modelBuilder.Entity<User>();
             users.HasKey(b => b.UserID);
@@ -78,18 +78,22 @@ namespace ProjetMVC.Models
             users.Property(b => b.Birthday).IsRequired();
             users.Property(b => b.Address).IsRequired();
             users.HasMany(b => b.Certificats).WithRequired(a => a.User).HasForeignKey(e => e.CertificatID);
-
+            
             var certificats = modelBuilder.Entity<Certificat>();
             certificats.HasKey(b => b.CertificatID);
             certificats.Property(b => b.DateBegin).IsRequired();
-            certificats.Property(b => b.DateEnd).IsRequired();
-            
+            certificats.Property(b => b.DateEnd).IsRequired();          
 
             var ammos = modelBuilder.Entity<Ammo>();
             ammos.HasKey(b => b.AmmoID);
             ammos.Property(b => b.Caliber).IsRequired();
             ammos.Property(b => b.Type).IsRequired();
             ammos.HasMany(b => b.Weapons).WithRequired(a => a.Ammo).HasForeignKey(e => e.WeaponID);
+        }
+
+        public StoreContext() : base("WeaponContext-20211229113635")
+        {
+            Database.SetInitializer<StoreContext>(new DropCreateDatabaseIfModelChanges<StoreContext>());
         }
     }
 }

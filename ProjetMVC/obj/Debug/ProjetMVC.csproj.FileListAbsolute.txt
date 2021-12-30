@@ -77,6 +77,5 @@ C:\Users\paran\Desktop\IS3\programmation client-serveur\ProjetMVC\ProjetMVC\bin\
 C:\Users\paran\Desktop\IS3\programmation client-serveur\ProjetMVC\ProjetMVC\bin\fr\System.Web.Webpages.Razor.resources.dll
 C:\Users\paran\Desktop\IS3\programmation client-serveur\ProjetMVC\ProjetMVC\bin\fr\System.Web.Helpers.resources.dll
 C:\Users\paran\Desktop\IS3\programmation client-serveur\ProjetMVC\ProjetMVC\bin\fr\System.Web.Mvc.resources.dll
-C:\Users\paran\Desktop\IS3\programmation client-serveur\ProjetMVC\ProjetMVC\obj\Debug\ProjetMVC.csproj.CopyComplete
 C:\Users\paran\Desktop\IS3\programmation client-serveur\ProjetMVC\ProjetMVC\obj\Debug\ProjetMVC.dll
 C:\Users\paran\Desktop\IS3\programmation client-serveur\ProjetMVC\ProjetMVC\obj\Debug\ProjetMVC.pdb
