@@ -122,6 +122,7 @@
   <ItemGroup>
     <Compile Include="App_Start\RouteConfig.cs" />
     <Compile Include="Controllers\AmmoesController.cs" />
+    <Compile Include="Controllers\CertificatsController.cs" />
     <Compile Include="Controllers\DefaultController.cs" />
     <Compile Include="Controllers\UsersController.cs" />
     <Compile Include="Controllers\WeaponController.cs" />
@@ -191,6 +192,7 @@
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
+    <Folder Include="Views\Certificats\" />
   </ItemGroup>
   <ItemGroup>
     <EmbeddedResource Include="Migrations\202201021240109_Initial.resx">

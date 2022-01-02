@@ -39,7 +39,7 @@ namespace ProjetMVC.Controllers
         // GET: Weapon/Create
         public ActionResult Create()
         {
-            ViewBag.AmmoID = new SelectList(db.Ammo, "AmmoID","Type", "Caliber" );
+            ViewBag.AmmoID = new SelectList(db.Ammo, "AmmoID","Type");
             return View();
         }
 
@@ -56,7 +56,7 @@ namespace ProjetMVC.Controllers
                 return RedirectToAction("Index");
             }
 
-            ViewBag.AmmoID = new SelectList(db.Ammo, "AmmoID", "Type", "Caliber");
+            ViewBag.AmmoID = new SelectList(db.Ammo, "AmmoID", "Type", weapon.AmmoID);
             return View(weapon);
         }
 
@@ -72,7 +72,7 @@ namespace ProjetMVC.Controllers
             {
                 return HttpNotFound();
             }
-            ViewBag.AmmoID = new SelectList(db.Ammo, "AmmoID", "Type", "Caliber");
+            ViewBag.AmmoID = new SelectList(db.Ammo, "AmmoID", "Type", weapon.AmmoID);
             return View(weapon);
         }
 
@@ -87,7 +87,7 @@ namespace ProjetMVC.Controllers
                 db.SaveChanges();
                 return RedirectToAction("Index");
             }
-            ViewBag.AmmoID = new SelectList(db.Ammo, "AmmoID", "Type", "Caliber", weapon.Ammo.AmmoID);
+            ViewBag.AmmoID = new SelectList(db.Ammo, "AmmoID", "Type", weapon.AmmoID);
             return View(weapon);
         }
 
