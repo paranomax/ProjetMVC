@@ -123,7 +123,7 @@
     <Compile Include="App_Start\RouteConfig.cs" />
     <Compile Include="Controllers\AmmoesController.cs" />
     <Compile Include="Controllers\CertificatsController.cs" />
-    <Compile Include="Controllers\DefaultController.cs" />
+    <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Controllers\UsersController.cs" />
     <Compile Include="Controllers\WeaponController.cs" />
     <Compile Include="Data\WeaponContext.cs" />
@@ -188,6 +188,8 @@
     <Content Include="Views\Certificats\Delete.cshtml" />
     <Content Include="Views\Certificats\Details.cshtml" />
     <Content Include="Views\Certificats\Edit.cshtml" />
+    <Content Include="Views\Home\Index.cshtml" />
+    <Content Include="Views\Shared\ButtonHome.cshtml" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>

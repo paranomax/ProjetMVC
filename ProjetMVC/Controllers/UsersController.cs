@@ -33,6 +33,8 @@ namespace ProjetMVC.Controllers
             }
             return View(user);
         }
+
+        [Route("InsriptionUser")]
         public ActionResult Create()
         {
             //ViewBag.UserID = new SelectList(db.User, "UserID", "Name", "LastName", "Birthday", "Address");
@@ -56,6 +58,7 @@ namespace ProjetMVC.Controllers
             return View(user);
         }
 
+        [Route("ModificationUser")]
         public ActionResult Edit(int? id)
         {
             if (id == null)
