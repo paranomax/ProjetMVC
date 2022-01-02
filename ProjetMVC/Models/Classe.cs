@@ -21,8 +21,8 @@ namespace ProjetMVC.Models
     public class Certificat
     {
         public int CertificatID { get; set; }
-        /*public int UserID { get; set; }
-        public int WeaponID { get; set; }*/
+        public int UserID { get; set; }
+        public int WeaponID { get; set; }
         public DateTime DateBegin { get; set; }
         public DateTime DateEnd { get; set; }
         public virtual User User { get; set; }
@@ -33,7 +33,7 @@ namespace ProjetMVC.Models
     {
         public int WeaponID { get; set; }
         public string WeaponModel { get; set; }
-        //public string AmmoID { get; set; }
+        public int AmmoID { get; set; }
 
         public virtual Ammo Ammo { get; set; }
         public virtual ICollection<Certificat> Certificats { get; set; }
@@ -68,6 +68,7 @@ namespace ProjetMVC.Models
             var weapons = modelBuilder.Entity<Weapon>();
             weapons.HasKey(b => b.WeaponID);
             weapons.Property(b => b.WeaponModel).IsRequired();
+            weapons.HasRequired(w => w.Ammo).WithMany(a => a.Weapons).HasForeignKey(w => w.AmmoID);
             
             //weapons.HasMany(b => b.Certificats).WithOptional(a => a.Weapon).HasForeignKey(e => e.Weapon.WeaponID);
 
@@ -84,16 +85,15 @@ namespace ProjetMVC.Models
             certificats.HasKey(b => b.CertificatID);
             certificats.Property(b => b.DateBegin).IsRequired();
             certificats.Property(b => b.DateEnd).IsRequired();
-            certificats.HasRequired(c => c.User).WithMany(u => u.Certificats);
-            certificats.HasRequired(c => c.Weapon).WithMany(w => w.Certificats);
+            certificats.HasRequired(c => c.User).WithMany(u => u.Certificats).HasForeignKey(p => p.UserID);
+            certificats.HasRequired(c => c.Weapon).WithMany(w => w.Certificats).HasForeignKey(p => p.WeaponID);
 
             var ammos = modelBuilder.Entity<Ammo>();
             ammos.HasKey(b => b.AmmoID);
             ammos.Property(b => b.Caliber).IsRequired();
             ammos.Property(b => b.Type).IsRequired();
-            ammos.HasMany<Weapon>(b => b.Weapons).WithOptional(p => p.Ammo);
+            //ammos.HasMany<Weapon>(b => b.Weapons).WithRequired(p => p.Ammo).HasForeignKey(p => p.AmmoID);
         }
-
        /* public StoreContext() : base("WeaponContext-20211229113635_Annotation")
         {
             Database.SetInitializer<StoreContext>(new DropCreateDatabaseIfModelChanges<StoreContext>());

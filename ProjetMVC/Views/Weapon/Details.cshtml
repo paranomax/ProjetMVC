@@ -1,0 +1,57 @@
+﻿@model ProjetMVC.Models.Weapon
+@{
+    Layout = null;
+}
+
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>Details</title>
+</head>
+<body>
+    <div>
+        <h4>Product</h4>
+        <hr />
+        <dl class="dl-horizontal">
+            <dt>
+                @Html.DisplayNameFor(model => model.WeaponID)
+            </dt>
+
+            <dd>
+                @Html.DisplayFor(model => model.WeaponID)
+            </dd>
+
+            <dt>
+                @Html.DisplayNameFor(model => model.WeaponModel)
+            </dt>
+
+            <dd>
+                @Html.DisplayFor(model => model.WeaponModel)
+            </dd>
+
+            <dt>
+                @Html.DisplayNameFor(model => model.AmmoID)
+            </dt>
+
+            <dd>
+                @Html.DisplayFor(model => model.AmmoID)
+            </dd>
+
+            <dt>
+                @Html.DisplayNameFor(model => model.Ammo.Type)
+            </dt>
+
+            <dd>
+                @Html.DisplayFor(model => model.Ammo.Type)
+            </dd>
+
+        </dl>
+    </div>
+    <p>
+        @Html.ActionLink("Edit", "Edit", new { id = Model.WeaponID }) |
+        @Html.ActionLink("Back to List", "Index")
+    </p>
+</body>
+</html>

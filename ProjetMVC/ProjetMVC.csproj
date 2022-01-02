@@ -124,13 +124,18 @@
     <Compile Include="Controllers\AmmoesController.cs" />
     <Compile Include="Controllers\DefaultController.cs" />
     <Compile Include="Controllers\UsersController.cs" />
+    <Compile Include="Controllers\WeaponController.cs" />
     <Compile Include="Data\WeaponContext.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
-    <Compile Include="Migrations\202112301702108_initial.cs" />
-    <Compile Include="Migrations\202112301702108_initial.designer.cs">
-      <DependentUpon>202112301702108_initial.cs</DependentUpon>
+    <Compile Include="Migrations\202201021240109_Initial.cs" />
+    <Compile Include="Migrations\202201021240109_Initial.Designer.cs">
+      <DependentUpon>202201021240109_Initial.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\202201021241283_InitialRelations.cs" />
+    <Compile Include="Migrations\202201021241283_InitialRelations.Designer.cs">
+      <DependentUpon>202201021241283_InitialRelations.cs</DependentUpon>
     </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\Classe.cs" />
@@ -172,6 +177,11 @@
     <Content Include="Views\Ammoes\Edit.cshtml" />
     <Content Include="Views\Ammoes\Delete.cshtml" />
     <Content Include="Views\Ammoes\Create.cshtml" />
+    <Content Include="Views\Weapon\Index.cshtml" />
+    <Content Include="Views\Weapon\Create.cshtml" />
+    <Content Include="Views\Weapon\Delete.cshtml" />
+    <Content Include="Views\Weapon\Details.cshtml" />
+    <Content Include="Views\Weapon\Edit.cshtml" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>
@@ -183,8 +193,11 @@
     <Folder Include="App_Data\" />
   </ItemGroup>
   <ItemGroup>
-    <EmbeddedResource Include="Migrations\202112301702108_initial.resx">
-      <DependentUpon>202112301702108_initial.cs</DependentUpon>
+    <EmbeddedResource Include="Migrations\202201021240109_Initial.resx">
+      <DependentUpon>202201021240109_Initial.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202201021241283_InitialRelations.resx">
+      <DependentUpon>202201021241283_InitialRelations.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>
