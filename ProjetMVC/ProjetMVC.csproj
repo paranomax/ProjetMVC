@@ -183,6 +183,11 @@
     <Content Include="Views\Weapon\Delete.cshtml" />
     <Content Include="Views\Weapon\Details.cshtml" />
     <Content Include="Views\Weapon\Edit.cshtml" />
+    <Content Include="Views\Certificats\Index.cshtml" />
+    <Content Include="Views\Certificats\Create.cshtml" />
+    <Content Include="Views\Certificats\Delete.cshtml" />
+    <Content Include="Views\Certificats\Details.cshtml" />
+    <Content Include="Views\Certificats\Edit.cshtml" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>
@@ -192,7 +197,6 @@
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
-    <Folder Include="Views\Certificats\" />
   </ItemGroup>
   <ItemGroup>
     <EmbeddedResource Include="Migrations\202201021240109_Initial.resx">

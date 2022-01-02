@@ -39,8 +39,8 @@ namespace ProjetMVC.Controllers
         // GET: Certificats/Create
         public ActionResult Create()
         {
-            ViewBag.WeaponID = new SelectList(db.Weapon, "WeaponID", "WeaponModel");
-            ViewBag.UserID = new SelectList(db.User, "Name", "LastName");
+            ViewBag.WeaponID = new SelectList(db.Weapon, "WeaponID", "WeaponID");
+            ViewBag.UserID = new SelectList(db.User, "UserID", "UserID");
             return View();
         }
 
@@ -48,7 +48,7 @@ namespace ProjetMVC.Controllers
 
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult Create([Bind(Include = "CertificatsID, UserID, WeaponID, DateBegin, DateEnd")] Certificat certificat)
+        public ActionResult Create([Bind(Include = "CertificatID, UserID, WeaponID, DateBegin, DateEnd")] Certificat certificat)
         {
             if (ModelState.IsValid)
             {
@@ -57,8 +57,8 @@ namespace ProjetMVC.Controllers
                 return RedirectToAction("Index");
             }
 
-            ViewBag.WeaponID = new SelectList(db.Weapon, "WeaponID", "WeaponModel", certificat.WeaponID);
-            ViewBag.UserID = new SelectList(db.User, "Name", "LastName", certificat.UserID);
+            ViewBag.WeaponID = new SelectList(db.Weapon, "WeaponID", "WeaponID", certificat.WeaponID);
+            ViewBag.UserID = new SelectList(db.User, "UserID", "UserID", certificat.UserID);
             return View(certificat);
         }
 
@@ -74,15 +74,15 @@ namespace ProjetMVC.Controllers
             {
                 return HttpNotFound();
             }
-            ViewBag.WeaponID = new SelectList(db.Weapon, "WeaponID", "WeaponModel", certificat.WeaponID);
-            ViewBag.UserID = new SelectList(db.User, "Name", "LastName", certificat.UserID);
+            ViewBag.WeaponID = new SelectList(db.Weapon, "WeaponID", "WeaponID", certificat.WeaponID);
+            ViewBag.UserID = new SelectList(db.User, "UserID", "UserID", certificat.UserID);
             return View(certificat);
         }
 
         // POST: Certificats/Edit/5
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult Edit([Bind(Include = "CertificatsID, CertificatsModel, AmmoID")] Certificat certificat)
+        public ActionResult Edit([Bind(Include = "CertificatID, WeaponID, UserID, DateBegin, DateEnd")] Certificat certificat)
         {
             if (ModelState.IsValid)
             {
@@ -90,8 +90,8 @@ namespace ProjetMVC.Controllers
                 db.SaveChanges();
                 return RedirectToAction("Index");
             }
-            ViewBag.WeaponID = new SelectList(db.Weapon, "WeaponID", "WeaponModel", certificat.WeaponID);
-            ViewBag.UserID = new SelectList(db.User, "Name", "LastName", certificat.UserID);
+            ViewBag.WeaponID = new SelectList(db.Weapon, "WeaponID", "WeaponID", certificat.WeaponID);
+            ViewBag.UserID = new SelectList(db.User, "UserID", "UserID", certificat.UserID);
             return View(certificat);
         }
 

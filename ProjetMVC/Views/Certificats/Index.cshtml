@@ -1,0 +1,67 @@
+﻿@model IEnumerable<ProjetMVC.Models.Certificat>
+
+@{
+    ViewBag.Title = "Index";
+    Layout = null;
+}
+
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>Index</title>
+</head>
+<body>
+    <h2>Index</h2><br />
+    <p>
+        @Html.ActionLink("Create New", "Create")
+    </p>
+    <table class="table">
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.CertificatID)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.DateBegin)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.DateEnd)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.WeaponID)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.UserID)
+            </th>
+            <th></th>
+        </tr>
+
+        @foreach (var item in Model)
+        {
+    <tr>
+        <td>
+            @Html.DisplayFor(modelItem => item.CertificatID))
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.DateBegin)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.DateEnd)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.WeaponID)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.UserID)
+        </td>
+        <td>
+            @Html.ActionLink("Edit", "Edit", new { id = item.CertificatID }) |
+            @Html.ActionLink("Details", "Details", new { id = item.CertificatID }) |
+            @Html.ActionLink("Delete", "Delete", new { id = item.CertificatID })
+        </td>
+    </tr>
+        }
+    </table>
+</body>
+</html>

@@ -1,0 +1,57 @@
+﻿@model ProjetMVC.Models.Certificat
+@{
+    Layout = null;
+}
+
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>Details</title>
+</head>
+<body>
+    <div>
+        <h4>Product</h4>
+        <hr />
+        <dl class="dl-horizontal">
+            <dt>
+                @Html.DisplayNameFor(model => model.DateBegin)
+            </dt>
+
+            <dd>
+                @Html.DisplayFor(model => model.DateBegin)
+            </dd>
+
+            <dt>
+                @Html.DisplayNameFor(model => model.DateEnd)
+            </dt>
+
+            <dd>
+                @Html.DisplayFor(model => model.DateEnd)
+            </dd>
+
+            <dt>
+                @Html.DisplayNameFor(model => model.WeaponID)
+            </dt>
+
+            <dd>
+                @Html.DisplayFor(model => model.WeaponID)
+            </dd>
+
+            <dt>
+                @Html.DisplayNameFor(model => model.UserID)
+            </dt>
+
+            <dd>
+                @Html.DisplayFor(model => model.UserID)
+            </dd>
+
+        </dl>
+    </div>
+    <p>
+        @Html.ActionLink("Edit", "Edit", new { id = Model.CertificatID }) |
+        @Html.ActionLink("Back to List", "Index")
+    </p>
+</body>
+</html>
