@@ -1,4 +1,4 @@
-﻿
+﻿@model ProjetMVC.Models.User
 @{
     Layout = null;
 }
@@ -11,7 +11,47 @@
     <title>Details</title>
 </head>
 <body>
-    <div> 
+    <div>
+        <h4>Product</h4>
+        <hr />
+        <dl class="dl-horizontal">
+            <dt>
+                @Html.DisplayNameFor(model => model.Name)
+            </dt>
+
+            <dd>
+                @Html.DisplayFor(model => model.Name)
+            </dd>
+
+            <dt>
+                @Html.DisplayNameFor(model => model.LastName)
+            </dt>
+
+            <dd>
+                @Html.DisplayFor(model => model.LastName)
+            </dd>
+
+            <dt>
+                @Html.DisplayNameFor(model => model.Address)
+            </dt>
+
+            <dd>
+                @Html.DisplayFor(model => model.Address)
+            </dd>
+
+            <dt>
+                @Html.DisplayNameFor(model => model.Birthday)
+            </dt>
+
+            <dd>
+                @Html.DisplayFor(model => model.Birthday)
+            </dd>
+
+        </dl>
     </div>
+    <p>
+        @Html.ActionLink("Edit", "Edit", new { id = Model.UserID }) |
+        @Html.ActionLink("Back to List", "Index")
+    </p>
 </body>
 </html>

@@ -35,7 +35,7 @@ namespace ProjetMVC.Controllers
         }
         public ActionResult Create()
         {
-            ViewBag.UserID = new SelectList(db.User, "UserID", "Name", "LastName", "Birthday", "Address");
+            //ViewBag.UserID = new SelectList(db.User, "UserID", "Name", "LastName", "Birthday", "Address");
             //ViewBag. = new SelectList(db.Users, "CategoryID", "Name");
             return View();
         }
@@ -52,7 +52,7 @@ namespace ProjetMVC.Controllers
                 return RedirectToAction("Index");
             }
 
-            ViewBag.CategoryID = new SelectList(db.User, "CategoryID", "Name", user.UserID);
+            //ViewBag.User = new SelectList(db.User, "CategoryID", "Name", user.UserID);
             return View(user);
         }
 
@@ -67,7 +67,7 @@ namespace ProjetMVC.Controllers
             {
                 return HttpNotFound();
             }
-            ViewBag.CategoryID = new SelectList(db.User, "CategoryID", "Name", user.UserID);
+            //ViewBag.User = new SelectList(db.User, "UserID", "Name", "LastName", "Birthday", "Address");
             return View(user);
         }
 
@@ -81,7 +81,7 @@ namespace ProjetMVC.Controllers
                 db.SaveChanges();
                 return RedirectToAction("Index");
             }
-            ViewBag.CategoryID = new SelectList(db.User, "CategoryID", "Name", user.UserID);
+           // ViewBag.User = new SelectList(db.User, "CategoryID", "Name", user.UserID);
             return View(user);
         }
 
