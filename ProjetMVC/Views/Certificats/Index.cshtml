@@ -1,8 +1,8 @@
 ﻿@model IEnumerable<ProjetMVC.Models.Certificat>
 
 @{
-    ViewBag.Title = "Index";
-    Layout = null;
+    ViewBag.Title = "Certificat";
+    Layout = "~/Views/Shared/_EssaiLayout.cshtml";
 }
 
 <!DOCTYPE html>
@@ -13,7 +13,7 @@
     <title>Index</title>
 </head>
 <body>
-    <h2>Index</h2><br />
+    <h2>Certificat</h2><br />
     <p>
         @Html.ActionLink("Create New", "Create")
     </p>
@@ -50,10 +50,10 @@
             @Html.DisplayFor(modelItem => item.DateEnd)
         </td>
         <td>
-            @Html.DisplayFor(modelItem => item.WeaponID)
+            @Html.DisplayFor(modelItem => item.Weapon.WeaponModel)
         </td>
         <td>
-            @Html.DisplayFor(modelItem => item.UserID)
+            @Html.DisplayFor(modelItem => item.User.Name)
         </td>
         <td>
             @Html.ActionLink("Edit", "Edit", new { id = item.CertificatID }) |
@@ -63,6 +63,5 @@
     </tr>
         }
     </table>
-    @Html.Partial("~/Views/Shared/ButtonHome.cshtml")
 </body>
 </html>
