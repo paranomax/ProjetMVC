@@ -7,6 +7,7 @@ using System.Net;
 using System.Web;
 using System.Web.Mvc;
 using ProjetMVC.Models;
+using ProjetMVC.ViewModels;
 
 namespace ProjetMVC.Controllers
 {
@@ -118,6 +119,33 @@ namespace ProjetMVC.Controllers
             db.User.Remove(user);
             db.SaveChanges();
             return RedirectToAction("Index");
+        }
+
+        //view avec requete linq pour afficher toutes les armes aux nom de cette utilisateur.
+        public ActionResult Arme(int? id)
+        {
+            UsersAmeViewModel userarmes = new UsersAmeViewModel()
+            {
+                user = new User(),
+                weapon = new List<Weapon> { }
+            };
+            if (id == null)
+            {
+                return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
+            }
+            userarmes.user = db.User.Find(id);
+            if (userarmes.user == null)
+            {
+                return HttpNotFound();
+            }
+            var certificats = from c in db.Certificat where c.UserID == userarmes.user.UserID select c;
+            foreach(Certificat c in certificats)
+            {
+                var weapon = db.Weapon.Find(c.WeaponID);
+                userarmes.weapon.Add(weapon);
+            }
+            return View(userarmes);
+            //var user = from u in db.User orderby u.Name ascending select u;
         }
 
         protected override void Dispose(bool disposing)

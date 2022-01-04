@@ -1,0 +1,44 @@
+﻿@model ProjetMVC.ViewModels.UsersAmeViewModel
+@{
+    Layout = null;
+}
+
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>Arme</title>
+</head>
+<body>
+    <div>
+        <h1>Liste d'armes loué par @Html.DisplayFor(model => model.user.LastName)</h1>
+        <br/>
+        <table class="table">
+
+            <tr>
+                <th>
+                    IDArme
+                </th>
+                <th>
+                    Modele de l'arme
+                </th>
+
+            </tr>
+            @foreach (var item in Model.weapon)
+            {
+                <tr>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.WeaponID))
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.WeaponModel)
+                    </td>
+                </tr>
+            }
+        </table>
+        @Html.ActionLink("retour à l'index", "Index")
+        
+    </div>
+</body>
+</html>
