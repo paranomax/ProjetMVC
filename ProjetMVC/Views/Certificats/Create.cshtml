@@ -1,7 +1,7 @@
 ﻿@model ProjetMVC.Models.Certificat
 
 @{
-    Layout = null;
+    Layout = "~/Views/Shared/View.cshtml";
 }
 
 <!DOCTYPE html>
@@ -9,7 +9,7 @@
 <html>
 <head>
     <meta name="viewport" content="width=device-width" />
-    <title>Create User</title>
+    <title>Create Certificat</title>
 </head>
 <body>
     <script src="~/Scripts/jquery-3.4.1.min.js"></script>
@@ -20,7 +20,7 @@
             {
                 @Html.AntiForgeryToken()
         <div class="form-horizontal">
-            <h4>User</h4>
+            <h4>Certificat</h4>
             <hr />
             @Html.ValidationSummary(true, "", new { @class = "test-danger" })
 

@@ -190,6 +190,9 @@
     <Content Include="Views\Home\Index.cshtml" />
     <Content Include="Views\Shared\ButtonHome.cshtml" />
     <Content Include="Views\Shared\_EssaiLayout.cshtml" />
+    <Content Include="Views\Users\OrderbyName.cshtml" />
+    <Content Include="Views\Home\Location.cshtml" />
+    <Content Include="Views\Shared\View.cshtml" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>

@@ -13,7 +13,6 @@ namespace ProjetMVC.Models
         public string LastName { get; set; }
         public DateTime Birthday { get; set; }
         public string Address { get; set; }
-
         public virtual ICollection<Certificat> Certificats { get; set; }
 
     }
@@ -45,11 +44,9 @@ namespace ProjetMVC.Models
         public int AmmoID { get; set; }
         public string Type { get; set; }
         public int Caliber { get; set; }
-
         public virtual ICollection<Weapon> Weapons { get; set; }
-
-
     }
+
     public class StoreContext : DbContext
     {   
 
@@ -94,6 +91,7 @@ namespace ProjetMVC.Models
             ammos.Property(b => b.Type).IsRequired();
             //ammos.HasMany<Weapon>(b => b.Weapons).WithRequired(p => p.Ammo).HasForeignKey(p => p.AmmoID);
         }
+
        /* public StoreContext() : base("WeaponContext-20211229113635_Annotation")
         {
             Database.SetInitializer<StoreContext>(new DropCreateDatabaseIfModelChanges<StoreContext>());

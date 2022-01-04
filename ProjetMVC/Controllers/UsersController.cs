@@ -20,6 +20,13 @@ namespace ProjetMVC.Controllers
             return View(user.ToList());
         }
 
+        //GET: OrderbyName
+        public ActionResult OrderbyName()
+        {
+            var user = from u in db.User orderby u.Name ascending select u;
+            return View(user);
+        }
+
         public ActionResult Details(int? id)
         {
             if(id == null)
@@ -44,7 +51,7 @@ namespace ProjetMVC.Controllers
 
         [HttpPost]
         [ValidateAntiForgeryToken]
-
+        [Route("InsriptionUser")]
         public ActionResult Create([Bind(Include = "UserID, Name, LastName, Birthday, Address")] User user)
         {
             if (ModelState.IsValid)
@@ -76,6 +83,7 @@ namespace ProjetMVC.Controllers
 
         [HttpPost]
         [ValidateAntiForgeryToken]
+        [Route("ModificationUser")]
         public ActionResult Edit([Bind(Include = "UserID, Name, LastName, Birthday, Address")] User user)
         {
             if (ModelState.IsValid)

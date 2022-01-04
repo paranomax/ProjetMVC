@@ -44,10 +44,11 @@
             @Html.DisplayFor(modelItem => item.CertificatID))
         </td>
         <td>
-            @Html.DisplayFor(modelItem => item.DateBegin)
+            @Html.Label(item.DateBegin.ToShortDateString())
+            
         </td>
         <td>
-            @Html.DisplayFor(modelItem => item.DateEnd)
+            @Html.Label(item.DateEnd.ToShortDateString())
         </td>
         <td>
             @Html.DisplayFor(modelItem => item.Weapon.WeaponModel)

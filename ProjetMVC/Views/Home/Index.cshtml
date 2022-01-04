@@ -1,6 +1,7 @@
-﻿
+﻿@model IEnumerable<ProjetMVC.Models.Certificat>
+
 @{
-    Layout = null;
+    Layout = Layout = "~/Views/Shared/_EssaiLayout.cshtml";
 }
 
 <!DOCTYPE html>
@@ -11,11 +12,64 @@
     <title>Index</title>
 </head>
 <body>
+    <h1>Projet MVC IS3 </h1>
+
+    <table class="table">
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.CertificatID)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.DateBegin)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.DateEnd)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.WeaponID)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.UserID)
+            </th>
+            <th></th>
+        </tr>
+
+        @foreach (var item in Model)
+        {
+            <tr>
+                <td>
+                    @Html.DisplayFor(modelItem => item.CertificatID))
+                </td>
+                <td>
+                    @Html.Label(item.DateBegin.ToShortDateString())
+            
+                </td>
+                <td>
+                    @Html.Label(item.DateEnd.ToShortDateString())
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Weapon.WeaponModel)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.User.Name)
+                </td>
+                <td>
+                    @Html.ActionLink("Edit", "Edit", new { id = item.CertificatID }) |
+                    @Html.ActionLink("Details", "Details", new { id = item.CertificatID }) |
+                    @Html.ActionLink("Delete", "Delete", new { id = item.CertificatID })
+                </td>
+            </tr>
+        }
+    </table>
+    <br/>
+    @Html.ActionLink("faire une location", "Location")
+    <br/>
+
     <div>
-        <h1>Projet MVC IS3 </h1>
+
         <br /> @Html.ActionLink("Vers les Users", "Index", "Users")
         <br /> @Html.ActionLink("Vers les Ammoes", "Index", "Ammoes")
-        <br /> @Html.ActionLink("Vers les Weapon", "Index", "Weapon")
+        <br /> @Html.ActionLink("Vers les Weapons", "Index", "Weapon")
         <br /> @Html.ActionLink("Vers les Certificats", "Index", "Certificats")
     </div>
 </body>
