@@ -51,5 +51,30 @@ namespace ProjetMVC.Controllers
             ViewBag.UserID = new SelectList(db.User, "UserID", "UserID", certificat.UserID);
             return View(certificat);
         }
+
+        public ActionResult Dictionnaire1(string LastName)
+        {
+            Dictionary<int, string> myDictionnary = new Dictionary<int, string>()
+            {
+                {1, "one" },
+                {2, "two" },
+                {3, "Three" }
+            };
+
+            Dictionary<string, User> UserDictionnary = new Dictionary<string, User>();
+            var listUser = db.User.ToList();
+            foreach(User u in listUser)
+            {
+                UserDictionnary.Add(u.LastName, u);
+            }
+
+            User userchoisi = UserDictionnary[LastName];
+            if (userchoisi == null)
+            {
+                return HttpNotFound();
+            }
+
+            return View(userchoisi);
+        }
     }
 }

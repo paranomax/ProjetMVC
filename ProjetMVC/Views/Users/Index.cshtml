@@ -53,7 +53,8 @@
                     @Html.ActionLink("Edit", "Edit", new { id = item.UserID }) |
                     @Html.ActionLink("Details", "Details", new { id = item.UserID }) |
                     @Html.ActionLink("Delete", "Delete", new { id = item.UserID }) |
-                    @Html.ActionLink("voir arme", "Arme", new { id = item.UserID })
+                    @Html.ActionLink("voir arme", "Arme", new { id = item.UserID }) |
+                    @Html.ActionLink("détail via dictionnaire", "Dictionnaire1", new { LastName = item.LastName })
                 </td>
             </tr>
         }
