@@ -197,6 +197,7 @@
     <Content Include="Views\Users\Arme.cshtml" />
     <Content Include="Views\Home\Dictionnaire1.cshtml" />
     <Content Include="Views\Users\Dictionnaire1.cshtml" />
+    <Content Include="Views\Ammoes\Recherche.cshtml" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>

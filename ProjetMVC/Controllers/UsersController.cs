@@ -147,12 +147,12 @@ namespace ProjetMVC.Controllers
         public ActionResult Dictionnaire1(string LastName)
         {
             User userchoisi = new User();
-            Dictionary<int, string> myDictionnary = new Dictionary<int, string>()
+            /*Dictionary<int, string> myDictionnary = new Dictionary<int, string>()
             {
                 {1, "one" },
                 {2, "two" },
                 {3, "Three" }
-            };
+            };*/
 
             Dictionary<string, User> UserDictionnary = new Dictionary<string, User>();
             var listUser = db.User.ToList();
@@ -160,19 +160,17 @@ namespace ProjetMVC.Controllers
             {
                 UserDictionnary.Add(u.LastName, u);
             }
+
             if (UserDictionnary.ContainsKey(LastName))
             {
                 userchoisi = UserDictionnary[LastName];
             }
-
-
+            /*
             User result = null;
             if(UserDictionnary.TryGetValue(LastName, out result))
             {
                 userchoisi = result;
-            }
-
-
+            }*/
 
             if (userchoisi == null)
             {

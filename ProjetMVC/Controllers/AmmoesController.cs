@@ -118,5 +118,35 @@ namespace ProjetMVC.Controllers
             base.Dispose(disposing);
         }
 
+        public ActionResult Recherche(string MotClef)
+        {
+            
+            if (MotClef == null)
+            {
+                return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
+            }
+
+            var ListeAmmo = db.Ammo.ToList().Where(c => c.Type == MotClef);
+            if (ListeAmmo.Count() > 0)
+                return View(ListeAmmo);
+
+            int i = Int32.Parse(MotClef);
+
+            ListeAmmo = db.Ammo.ToList().Where(c => c.AmmoID == i);
+            if (ListeAmmo.Count() > 0)
+                return View(ListeAmmo);
+
+            ListeAmmo = db.Ammo.ToList().Where(c => c.Caliber == i);
+            if (ListeAmmo.Count() > 0)
+                return View(ListeAmmo);
+
+            if (ListeAmmo.Count() > 0)
+            {
+                return HttpNotFound();
+            }
+
+            return View();
+        }
+
     }
 }

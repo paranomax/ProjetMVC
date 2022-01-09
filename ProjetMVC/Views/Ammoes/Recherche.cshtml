@@ -1,0 +1,53 @@
+﻿@model IEnumerable<ProjetMVC.Models.Ammo>
+
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Views/Shared/_EssaiLayout.cshtml";
+}
+
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>Recherche</title>
+</head>
+<body>
+    <h2>Recherche</h2><br />
+    <table class="table">
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.AmmoID)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Type)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Caliber)
+            </th>
+            <th></th>
+        </tr>
+
+        @foreach (var item in Model)
+        {
+            <tr>
+                <td>
+                    @Html.DisplayFor(modelItem => item.AmmoID))
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Type)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Caliber)
+                </td>
+                <td>
+                    @Html.ActionLink("Edit", "Edit", new { id = item.AmmoID }) |
+                    @Html.ActionLink("Details", "Details", new { id = item.AmmoID }) |
+                    @Html.ActionLink("Delete", "Delete", new { id = item.AmmoID })
+                </td>
+            </tr>
+        }
+    </table>
+    @Html.ActionLink("Index", "Index")
+</body>
+</html>

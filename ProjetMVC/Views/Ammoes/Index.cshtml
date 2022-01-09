@@ -51,5 +51,12 @@
             </tr>
         }
     </table>
+    <br/>
+    @using (Html.BeginForm("Recherche", "Ammoes"))
+            {
+            @Html.TextBox("MotClef")
+            <input type="submit" value="MotClef" />
+            }
+    
 </body>
 </html>
